@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f0f0f0, #d1d1d1); /* Background yang lebih lembut */
+    display: flex;
+    flex-direction: column; /* Mengubah orientasi menjadi kolom */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    transition: transform 0.3s;
+}
+
+.profile-img:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+h1 {
+    font-size: 2.5em; /* Meningkatkan ukuran font */
+    margin-bottom: 10px;
+    color: #333; /* Warna yang lebih gelap untuk kontras */
+}
+
+p {
+    color: #666;
+}
+
+.card-container {
+    display: flex; /* Menggunakan flexbox untuk susunan horizontal */
+    justify-content: center; /* Menjaga agar kartu di tengah */
+    flex-wrap: wrap; /* Mengizinkan kartu untuk membungkus ke baris berikutnya */
+    gap: 20px; /* Ruang antar kartu */
+    padding: 10px; /* Tambahkan padding di sekitar grid */
+}
+
+.card {
+    background: #ffffff; /* Warna putih untuk kartu */
+    border-radius: 15px; /* Meningkatkan radius border */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s; /* Menambahkan transisi bayangan */
+    width: 250px; /* Atur lebar tetap untuk kartu */
+    position: relative; /* Menambahkan posisi relatif */
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Angkat kartu sedikit lebih tinggi */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Tambah bayangan saat hover */
+}
+
+.card-img {
+    width: 100%;
+    height: 150px; /* Tinggi gambar kartu */
+    object-fit: cover;
+    transition: transform 0.3s; /* Transisi untuk gambar */
+}
+
+.card:hover .card-img {
+    transform: scale(1.05); /* Efek zoom pada gambar saat hover */
+}
+
+.card-content {
+    padding: 20px; /* Meningkatkan padding */
+    text-align: left;
+}
+
+.card-content h3 {
+    margin: 10px 0;
+    color: #333;
+}
+
+.card-content p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Button */
+.card-button {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: white;
+    text-decoration: none;
+    padding: 12px 18px; /* Meningkatkan padding tombol */
+    border-radius: 5px;
+    display: inline-block;
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s; /* Tambahkan transisi bayangan */
+}
+
+.card-button:hover {
+    background: linear-gradient(45deg, #ff4b2b, #ff416c);
+    transform: translateY(-3px); /* Efek angkat saat hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan saat hover */
+}
+
+/* Coming Soon */
+.card.coming-soon {
+    background: #eaf2f8; /* Warna latar belakang lembut */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px; /* Tinggi tetap untuk kartu */
+    overflow: hidden; /* Mencegah elemen meluap */
+    border: 2px dashed #3498db; /* Border dasi untuk tampilan yang menarik */
+    transition: background 0.3s, border-color 0.3s; /* Transisi untuk latar belakang dan warna border */
+}
+
+.card.coming-soon:hover {
+    background: #d1e7f0; /* Ubah latar belakang saat di-hover */
+    border-color: #2980b9; /* Ubah warna border saat di-hover */
+}
+
+.coming-soon-text {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #2980b9; /* Warna biru modern */
+    opacity: 0; /* Teks tidak terlihat saat tidak di-hover */
+    transition: opacity 0.3s ease; /* Transisi untuk opacity */
+    position: absolute; /* Memposisikan teks secara absolut */
+    text-align: center; /* Meratakan teks di tengah */
+}
+
+.card.coming-soon:hover .coming-soon-text {
+    opacity: 1; /* Teks muncul saat di-hover */
+}
+
+/* Menambahkan elemen tambahan untuk dekorasi */
+.card.coming-soon::before {
+    content:; /* Ikon tambahan */
+    font-size: 3em; /* Ukuran ikon */
+    position: absolute; /* Memposisikan ikon secara absolut */
+    top: 20%; /* Atur posisi vertikal */
+    left: 50%; /* Atur posisi horizontal */
+    transform: translate(-50%, -50%); /* Pusatkan ikon */
+    opacity: 0.1; /* Transparansi ikon */
+    transition: opacity 0.3s ease; /* Transisi untuk opacity */
+}
+
+.card.coming-soon:hover::before {
+    opacity: 0; /* Menyembunyikan ikon saat di-hover */
+}
+
+.footer {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #666; /* Mengubah warna footer */
+}
